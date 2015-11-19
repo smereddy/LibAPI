@@ -4,11 +4,11 @@
 	<thead>
 	<tr>
 			<th><?php echo $this->Paginator->sort('Mem_ID'); ?></th>
-			<th><?php echo $this->Paginator->sort('Libraries_Library_ID'); ?></th>
-			<th><?php echo $this->Paginator->sort('Donors_Donor_ID'); ?></th>
-			<th><?php echo $this->Paginator->sort('Items_Donated_Item_ID'); ?></th>
+			<th><?php echo $this->Paginator->sort('Library_ID'); ?></th>
+			<th><?php echo $this->Paginator->sort('Donor_ID'); ?></th>
+			<th><?php echo $this->Paginator->sort('Item_ID'); ?></th>
 			<th><?php echo $this->Paginator->sort('Party_Memorialized'); ?></th>
-			<th><?php echo $this->Paginator->sort('Desciption'); ?></th>
+			<th><?php echo $this->Paginator->sort('Description'); ?></th>
 			<th><?php echo $this->Paginator->sort('Memorial_Inscription'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
@@ -17,11 +17,11 @@
 	<?php foreach ($memorials as $memorial): ?>
 	<tr>
 		<td><?php echo h($memorial['Memorial']['Mem_ID']); ?>&nbsp;</td>
-		<td><?php echo h($memorial['Memorial']['Libraries_Library_ID']); ?>&nbsp;</td>
-		<td><?php echo h($memorial['Memorial']['Donors_Donor_ID']); ?>&nbsp;</td>
-		<td><?php echo h($memorial['Memorial']['Items_Donated_Item_ID']); ?>&nbsp;</td>
+		<td><?php echo h($memorial['Memorial']['Library_ID']); ?>&nbsp;</td>
+		<td><?php echo h($memorial['Memorial']['Donor_ID']); ?>&nbsp;</td>
+		<td><?php echo h($memorial['Memorial']['Item_ID']); ?>&nbsp;</td>
 		<td><?php echo h($memorial['Memorial']['Party_Memorialized']); ?>&nbsp;</td>
-		<td><?php echo h($memorial['Memorial']['Desciption']); ?>&nbsp;</td>
+		<td><?php echo h($memorial['Memorial']['Description']); ?>&nbsp;</td>
 		<td><?php echo h($memorial['Memorial']['Memorial_Inscription']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $memorial['Memorial']['Mem_ID'])); ?>
@@ -48,6 +48,12 @@
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
+	<ul>
+	<li class="active"><a href="users">Home</a></li>
+	</ul>
+	<ul>
+	<li><?php echo $this->Html->link( "Logout", array('action'=>'logout') ); ?></li>
+	
 	<ul>
 		<li><?php echo $this->Html->link(__('New Memorial'), array('action' => 'add')); ?></li>
 	</ul>

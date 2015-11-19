@@ -6,24 +6,24 @@
 			<?php echo h($transaction['Transaction']['Trans_ID']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Libraries  Library  I D'); ?></dt>
+		<dt><?php echo __('Library  I D'); ?></dt>
 		<dd>
-			<?php echo h($transaction['Transaction']['Libraries_Library_ID']); ?>
+			<?php echo h($transaction['Transaction']['Library_ID']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Items  Donated  Item  I D'); ?></dt>
+		<dt><?php echo __('Item  I D'); ?></dt>
 		<dd>
-			<?php echo h($transaction['Transaction']['Items_Donated_Item_ID']); ?>
+			<?php echo h($transaction['Transaction']['Item_ID']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Appeal  Appeal  I D'); ?></dt>
+		<dt><?php echo __('Appeal  I D'); ?></dt>
 		<dd>
-			<?php echo h($transaction['Transaction']['Appeal_Appeal_ID']); ?>
+			<?php echo h($transaction['Transaction']['Appeal_ID']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Donors  Donor  I D'); ?></dt>
+		<dt><?php echo __('Donor  I D'); ?></dt>
 		<dd>
-			<?php echo h($transaction['Transaction']['Donors_Donor_ID']); ?>
+			<?php echo h($transaction['Transaction']['Donor_ID']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Trans  Amount'); ?></dt>

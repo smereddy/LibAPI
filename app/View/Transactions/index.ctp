@@ -4,10 +4,10 @@
 	<thead>
 	<tr>
 			<th><?php echo $this->Paginator->sort('Trans_ID'); ?></th>
-			<th><?php echo $this->Paginator->sort('Libraries_Library_ID'); ?></th>
-			<th><?php echo $this->Paginator->sort('Items_Donated_Item_ID'); ?></th>
-			<th><?php echo $this->Paginator->sort('Appeal_Appeal_ID'); ?></th>
-			<th><?php echo $this->Paginator->sort('Donors_Donor_ID'); ?></th>
+			<th><?php echo $this->Paginator->sort('Library_ID'); ?></th>
+			<th><?php echo $this->Paginator->sort('Item_ID'); ?></th>
+			<th><?php echo $this->Paginator->sort('Appeal_ID'); ?></th>
+			<th><?php echo $this->Paginator->sort('Donor_ID'); ?></th>
 			<th><?php echo $this->Paginator->sort('Trans_Amount'); ?></th>
 			<th><?php echo $this->Paginator->sort('Trans_Time_Date'); ?></th>
 			<th><?php echo $this->Paginator->sort('Trans_Type'); ?></th>
@@ -20,10 +20,10 @@
 	<?php foreach ($transactions as $transaction): ?>
 	<tr>
 		<td><?php echo h($transaction['Transaction']['Trans_ID']); ?>&nbsp;</td>
-		<td><?php echo h($transaction['Transaction']['Libraries_Library_ID']); ?>&nbsp;</td>
-		<td><?php echo h($transaction['Transaction']['Items_Donated_Item_ID']); ?>&nbsp;</td>
-		<td><?php echo h($transaction['Transaction']['Appeal_Appeal_ID']); ?>&nbsp;</td>
-		<td><?php echo h($transaction['Transaction']['Donors_Donor_ID']); ?>&nbsp;</td>
+		<td><?php echo h($transaction['Transaction']['Library_ID']); ?>&nbsp;</td>
+		<td><?php echo h($transaction['Transaction']['Item_ID']); ?>&nbsp;</td>
+		<td><?php echo h($transaction['Transaction']['Appeal_ID']); ?>&nbsp;</td>
+		<td><?php echo h($transaction['Transaction']['Donor_ID']); ?>&nbsp;</td>
 		<td><?php echo h($transaction['Transaction']['Trans_Amount']); ?>&nbsp;</td>
 		<td><?php echo h($transaction['Transaction']['Trans_Time_Date']); ?>&nbsp;</td>
 		<td><?php echo h($transaction['Transaction']['Trans_Type']); ?>&nbsp;</td>
@@ -54,6 +54,12 @@
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
+	<ul>
+	<li class="active"><a href="users">Home</a></li>
+	</ul>
+	<ul>
+	<li><?php echo $this->Html->link( "Logout", array('action'=>'logout') ); ?></li>
+	
 	<ul>
 		<li><?php echo $this->Html->link(__('New Transaction'), array('action' => 'add')); ?></li>
 	</ul>

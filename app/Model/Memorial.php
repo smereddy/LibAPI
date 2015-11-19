@@ -20,11 +20,4 @@ class Memorial extends AppModel {
  */
 	public $primaryKey = 'Mem_ID';
 
-/**
- * Display field
- *
- * @var string
- */
-	public $displayField = 'Mem_ID';
-
 }

@@ -1,9 +1,4 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -47,8 +42,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				 <ul class="navig">
 					 <li class="active"><a href="index.html">Home</a></li>
 					 <li><a href="about.html">About</a></li>
-					 <li><a href="Donors">donors</a></li>
-					 <li><a href="Memorials">memorials</a></li>
+					 <li><a href="program.html">Programs</a></li>
+					 <li><a href="blog.html">Blog</a></li>
+					 <li><a href="gallery.html">Gallery</a></li>
 					 <li><a href="contact.html">Contact</a></li>
 				 </ul>
 			 </div>
@@ -176,8 +172,19 @@ We are an integral part of the communities we serve. We seek and nurture relatio
 				 <div class="clearfix"></div>
 				 </div>
 			 <div class="col-md-3 testimonal">
-					<h3>Advertisments</h3>
-					
+					<h3>Testimonials</h3>
+					<div class="testimnl-grid">
+						 <a href="#"><p>Aenean ultrices commodo risus, id sollicitudin nunc commodo at. Sed sagittis, lacus id viverra eleifend, enim magna.</p></a>
+						 <h5>John.Mr</h5>
+					</div>
+					<div class="testimnl-grid">
+						 <a href="#"><p>Aenean ultrices commodo risus, id sollicitudin nunc commodo at. Sed sagittis, lacus id viverra eleifend, enim magna.</p></a>
+						 <h5>John.Mr</h5>
+					</div>
+					<div class="testimnl-grid">
+						 <a href="#"><p>Aenean ultrices commodo risus, id sollicitudin nunc commodo at. Sed sagittis, lacus id viverra eleifend, enim magna.</p></a>
+						 <h5>John.Mr</h5>
+					</div>
 			 </div>
 			 <div class="clearfix"></div>
 		 </div>

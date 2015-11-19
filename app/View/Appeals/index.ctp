@@ -4,10 +4,11 @@
 	<thead>
 	<tr>
 			<th><?php echo $this->Paginator->sort('Appeal_ID'); ?></th>
+			<th><?php echo $this->Paginator->sort('Donor_ID'); ?></th>
 			<th><?php echo $this->Paginator->sort('Appeal_Description'); ?></th>
 			<th><?php echo $this->Paginator->sort('Start_Time_Date'); ?></th>
 			<th><?php echo $this->Paginator->sort('End_Time_Date'); ?></th>
-			<th><?php echo $this->Paginator->sort('Appeal_Type'); ?></th>
+			<th><?php echo $this->Paginator->sort('Type'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	</thead>
@@ -15,10 +16,11 @@
 	<?php foreach ($appeals as $appeal): ?>
 	<tr>
 		<td><?php echo h($appeal['Appeal']['Appeal_ID']); ?>&nbsp;</td>
+		<td><?php echo h($appeal['Appeal']['Donor_ID']); ?>&nbsp;</td>
 		<td><?php echo h($appeal['Appeal']['Appeal_Description']); ?>&nbsp;</td>
 		<td><?php echo h($appeal['Appeal']['Start_Time_Date']); ?>&nbsp;</td>
 		<td><?php echo h($appeal['Appeal']['End_Time_Date']); ?>&nbsp;</td>
-		<td><?php echo h($appeal['Appeal']['Appeal_Type']); ?>&nbsp;</td>
+		<td><?php echo h($appeal['Appeal']['Type']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $appeal['Appeal']['Appeal_ID'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $appeal['Appeal']['Appeal_ID'])); ?>
@@ -45,6 +47,13 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
+	<li class="active"><a href="users">Home</a></li>
+	</ul>
+	<ul>
+	<li><?php echo $this->Html->link( "Logout", array('action'=>'logout') ); ?></li>
+	</ul>
+	<ul>
 		<li><?php echo $this->Html->link(__('New Appeal'), array('action' => 'add')); ?></li>
 	</ul>
+	
 </div>

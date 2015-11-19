@@ -3,10 +3,11 @@
 	<fieldset>
 		<legend><?php echo __('Add Appeal'); ?></legend>
 	<?php
+		echo $this->Form->input('Donor_ID');
 		echo $this->Form->input('Appeal_Description');
 		echo $this->Form->input('Start_Time_Date');
 		echo $this->Form->input('End_Time_Date');
-		echo $this->Form->input('Appeal_Type');
+		echo $this->Form->input('Type');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

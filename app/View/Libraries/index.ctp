@@ -53,6 +53,12 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
+	<li class="active"><a href="users">Home</a></li>
+	</ul>
+	<ul>
+	<li><?php echo $this->Html->link( "Logout", array('action'=>'logout') ); ?></li>
+	
+	<ul>
 		<li><?php echo $this->Html->link(__('New Library'), array('action' => 'add')); ?></li>
 	</ul>
 </div>

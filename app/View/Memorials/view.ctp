@@ -6,19 +6,19 @@
 			<?php echo h($memorial['Memorial']['Mem_ID']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Libraries  Library  I D'); ?></dt>
+		<dt><?php echo __('Library  I D'); ?></dt>
 		<dd>
-			<?php echo h($memorial['Memorial']['Libraries_Library_ID']); ?>
+			<?php echo h($memorial['Memorial']['Library_ID']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Donors  Donor  I D'); ?></dt>
+		<dt><?php echo __('Donor  I D'); ?></dt>
 		<dd>
-			<?php echo h($memorial['Memorial']['Donors_Donor_ID']); ?>
+			<?php echo h($memorial['Memorial']['Donor_ID']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Items  Donated  Item  I D'); ?></dt>
+		<dt><?php echo __('Item  I D'); ?></dt>
 		<dd>
-			<?php echo h($memorial['Memorial']['Items_Donated_Item_ID']); ?>
+			<?php echo h($memorial['Memorial']['Item_ID']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Party  Memorialized'); ?></dt>
@@ -26,9 +26,9 @@
 			<?php echo h($memorial['Memorial']['Party_Memorialized']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Desciption'); ?></dt>
+		<dt><?php echo __('Description'); ?></dt>
 		<dd>
-			<?php echo h($memorial['Memorial']['Desciption']); ?>
+			<?php echo h($memorial['Memorial']['Description']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Memorial  Inscription'); ?></dt>

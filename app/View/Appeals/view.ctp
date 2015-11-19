@@ -6,6 +6,11 @@
 			<?php echo h($appeal['Appeal']['Appeal_ID']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Donor  I D'); ?></dt>
+		<dd>
+			<?php echo h($appeal['Appeal']['Donor_ID']); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('Appeal  Description'); ?></dt>
 		<dd>
 			<?php echo h($appeal['Appeal']['Appeal_Description']); ?>
@@ -21,9 +26,9 @@
 			<?php echo h($appeal['Appeal']['End_Time_Date']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Appeal  Type'); ?></dt>
+		<dt><?php echo __('Type'); ?></dt>
 		<dd>
-			<?php echo h($appeal['Appeal']['Appeal_Type']); ?>
+			<?php echo h($appeal['Appeal']['Type']); ?>
 			&nbsp;
 		</dd>
 	</dl>

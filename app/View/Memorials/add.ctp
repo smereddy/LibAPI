@@ -3,11 +3,11 @@
 	<fieldset>
 		<legend><?php echo __('Add Memorial'); ?></legend>
 	<?php
-		echo $this->Form->input('Libraries_Library_ID');
-		echo $this->Form->input('Donors_Donor_ID');
-		echo $this->Form->input('Items_Donated_Item_ID');
+		echo $this->Form->input('Library_ID');
+		echo $this->Form->input('Donor_ID');
+		echo $this->Form->input('Item_ID');
 		echo $this->Form->input('Party_Memorialized');
-		echo $this->Form->input('Desciption');
+		echo $this->Form->input('Description');
 		echo $this->Form->input('Memorial_Inscription');
 	?>
 	</fieldset>

@@ -4,10 +4,10 @@
 		<legend><?php echo __('Edit Transaction'); ?></legend>
 	<?php
 		echo $this->Form->input('Trans_ID');
-		echo $this->Form->input('Libraries_Library_ID');
-		echo $this->Form->input('Items_Donated_Item_ID');
-		echo $this->Form->input('Appeal_Appeal_ID');
-		echo $this->Form->input('Donors_Donor_ID');
+		echo $this->Form->input('Library_ID');
+		echo $this->Form->input('Item_ID');
+		echo $this->Form->input('Appeal_ID');
+		echo $this->Form->input('Donor_ID');
 		echo $this->Form->input('Trans_Amount');
 		echo $this->Form->input('Trans_Time_Date');
 		echo $this->Form->input('Trans_Type');
