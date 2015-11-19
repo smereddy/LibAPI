@@ -26,6 +26,9 @@ class TransactionsController extends AppController {
 		$this->set('transactions', $this->Paginator->paginate());
 	}
 
+	public function logout() {
+		$this->redirect($this->Auth->logout());
+	}
 /**
  * view method
  *

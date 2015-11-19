@@ -25,6 +25,10 @@ class MemorialsController extends AppController {
 		$this->Memorial->recursive = 0;
 		$this->set('memorials', $this->Paginator->paginate());
 	}
+	
+	public function logout() {
+		$this->redirect($this->Auth->logout());
+	}
 
 /**
  * view method

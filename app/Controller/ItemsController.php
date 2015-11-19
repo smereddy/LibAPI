@@ -15,6 +15,10 @@ class ItemsController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Session');
+	
+	public function logout() {
+		$this->redirect($this->Auth->logout());
+	}
 
 /**
  * index method

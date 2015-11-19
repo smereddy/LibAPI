@@ -25,6 +25,10 @@ class AppealsController extends AppController {
 		$this->Appeal->recursive = 0;
 		$this->set('appeals', $this->Paginator->paginate());
 	}
+	
+	public function logout() {
+		$this->redirect($this->Auth->logout());
+	}
 
 /**
  * view method

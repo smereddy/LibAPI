@@ -26,6 +26,9 @@ class LibrariesController extends AppController {
 		$this->set('libraries', $this->Paginator->paginate());
 	}
 
+	public function logout() {
+		$this->redirect($this->Auth->logout());
+	}
 /**
  * view method
  *
