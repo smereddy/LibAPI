@@ -49,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 <li><a href="appeals">Appeals</a></li>
 					 <li><a href="Donors">Donors</a></li>
 					 <li><a href="Memorials">Memorials</a></li>
-					 <li><a href="items_donated">Items</a></li>
+					 <li><a href="items">Items</a></li>
 					 <li><a href="libraries">Libraries</a></li>
 					 <li><a href="transactions">Transactions</a></li>
 					 <li><?php 
@@ -142,98 +142,60 @@ If you are a new applicant who resides in Douglas County, Nebraska, once you hav
 	  </div>
 </div>
 <!---->
-<div class="welcome">
-	 <div class="container">
-		 <h2>Omaha is a vital and vibrant city, with Omaha Public Library as an essential catalyst, collaborator and connector.</h2>
-		 <div class="welcm_sec">
-			 <div class="col-md-9 campus">
-				 <div class="campus_head">
-					 <h3>Welcome</h3>
-					 <p>Omaha Public Library strengthens our communities by connecting people with ideas, information, and innovative services.
-</p>
-				 </div>
-				 <div class="col-md-3 wel_grid">
-					 <img src="images/w1.jpg" class="img-responsive" alt=""/>
-					 <h5><a href="#">Service Excellence</a></h5>
-					 <p>
-We provide positive and welcoming experiences to everyone, both online and in person.</p>
-				 </div>
-				 <div class="col-md-3 wel_grid">
-					 <img src="images/w3.jpg" class="img-responsive" alt=""/>
-					 <h5><a href="#">Integrity</a></h5>
-					 <p>
-We are a trusted resource for our communities. We take pride in our commitment to honesty and transparency.</p>
-				 </div>
-				 <div class="col-md-3 wel_grid">
-					 <img src="images/w2.jpg" class="img-responsive" alt=""/>
-					 <h5><a href="#">Innovation</a></h5>
-					 <p>
-We continually seek new and better ways to serve our communities. We anticipate change, and respond quickly.
-</p>
-				 </div>
-				 <div class="col-md-3 wel_grid">
-					 <img src="images/w4.jpg" class="img-responsive" alt=""/>
-					 <h5><a href="#">Community Engagement</a></h5>
-					 <p>
-We are an integral part of the communities we serve. We seek and nurture relationships with other organizations to develop partnerships that move Omaha forward.
-</p>
-				 </div>
-				 <div class="clearfix"></div>
-				 </div>
-			 <div class="col-md-3 testimonal">
-					<h3>Advertisments</h3>
-					
-			 </div>
-			 <div class="clearfix"></div>
-		 </div>
-	 </div>
-</div>
-<!---->
-<div class="news">
-	 <div class="container">
-		 <h3>Top News</h3>
-		  <div class="event-grids">			
-		     <div class="col-md-4 event-grid">
-				 <div class="date">
-				     <h4>26</h4>
-					 <span>10/2015</span>
-				 </div>				 
-			     <div class="event-info">
-					  <h5><a href="#">Get Crafty: Kids Halloween Craft.</p>					
-				 </div>
-				 <div class="clearfix"></div>				 			 
-			 </div>
-			 <div class="col-md-4 event-grid">
-				 <div class="date">
-				     <h4>24</h4>
-					 <span>10/2015</span>
-				 </div>				 
-			     <div class="event-info">
-					  <h5><a href="#">Halloween Fun Fest at Main Library</a></h5>
-						</div>
-				 <div class="clearfix"></div>				 			 
-			 </div>
-			 <div class="col-md-4 event-grid">
-				 <div class="date">
-				     <h4>20</h4>
-					 <span>10/2015</span>
-				 </div>				 
-			     <div class="event-info">
-					  <h5><a href="#">Saddlebrook Storytime - Happy Halloween</a></h5>
-						</div>
-				 <div class="clearfix"></div>				 			 
-			 </div>
-			 <div class="clearfix"></div>	
-		 </div>
-	 </div>
-</div>
-<!---->
-<!---->
 <div class="copywrite">
 	 <div class="container">
-		 <p>Copyright © 2015 Omaha Public Library. All rights reserved | Design by MESH</a></p>
-	 </div>
+		
+<div class="users form">
+<h1>Users</h1>
+<table>
+    <thead>
+		<tr>
+			<th><?php echo $this->Form->checkbox('all', array('name' => 'CheckAll',  'id' => 'CheckAll')); ?></th>
+			<th><?php echo $this->Paginator->sort('username', 'Username');?>  </th>
+			<th><?php echo $this->Paginator->sort('email', 'E-Mail');?></th>
+			<th><?php echo $this->Paginator->sort('created', 'Created');?></th>
+			<th><?php echo $this->Paginator->sort('modified','Last Update');?></th>
+			<th><?php echo $this->Paginator->sort('status','Status');?></th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>						
+		<?php $count=0; ?>
+		<?php foreach($users as $user): ?>				
+		<?php $count ++;?>
+		<?php if($count % 2): echo '<tr>'; else: echo '<tr class="zebra">' ?>
+		<?php endif; ?>
+			<td><?php echo $this->Form->checkbox('User.id.'.$user['User']['id']); ?></td>
+			<td><?php echo $this->Html->link( $user['User']['username']  ,   array('action'=>'edit', $user['User']['id']),array('escape' => false) );?></td>
+			<td style="text-align: center;"><?php echo $user['User']['email']; ?></td>
+			<td style="text-align: center;"><?php echo $this->Time->niceShort($user['User']['created']); ?></td>
+			<td style="text-align: center;"><?php echo $this->Time->niceShort($user['User']['modified']); ?></td>
+			<td style="text-align: center;"><?php echo $user['User']['status']; ?></td>
+			<td >
+			<?php if ( $current_user ['id'] == $user['User']['id'] || $current_user['role'] == 'admin'): ?>
+			<?php echo $this->Html->link(    "Edit",   array('action'=>'edit', $user['User']['id']) ); ?> | 
+			<?php
+				if( $user['User']['status'] != 0){ 
+					echo $this->Html->link(    "Delete", array('action'=>'delete', $user['User']['id']));}else{
+					echo $this->Html->link(    "Re-Activate", array('action'=>'activate', $user['User']['id']));
+					}
+			?>
+			<?php endif; ?>
+			</td>
+		</tr>
+		<?php endforeach; ?>
+		<?php unset($user); ?>
+	</tbody>
+</table>
+<?php echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
+<?php echo $this->Paginator->numbers(array(   'class' => 'numbers'     ));?>
+<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
+</div>				
+<?php echo $this->Html->link( "Add A New User.",   array('action'=>'add'),array('escape' => false) ); ?>
+<br/>
 </div>
+</div>
+<!---->
 <!---->
 </body>
 </html>

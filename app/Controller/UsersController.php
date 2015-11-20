@@ -12,7 +12,17 @@ class UsersController extends AppController {
         parent::beforeFilter();
         $this->Auth->allow('login','add'); 
     }
-	
+	public function isAuthorized($user) {
+		if ($user['role'] == 'admin'){
+			return true;
+		}
+		if(in_array($this->action, array('edit', 'delete'))){
+			if ($user['id'] != $this->request->params['pass'][0]){
+				return false;
+			}
+		}// Here is where we should verify the role and give access based on role
+		return true;
+	}
 
 
 	public function login() {
@@ -32,6 +42,18 @@ class UsersController extends AppController {
 			}
 		} 
 	}
+	public function view($id = null) {
+		$this->user->id = $id;
+		
+		if (!$this->User->exists()) {
+			throw new NotFoundException('Invalid user');
+		}
+		if (!$id) {
+			$this->Session->setFlash('Invalid user');
+			$this->redirect(array('action' => 'index'));
+			}
+			$this->set('user', $this->user->read());
+		}
 
 	public function logout() {
 		$this->redirect($this->Auth->logout());

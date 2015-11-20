@@ -42,20 +42,21 @@ class AppController extends Controller {
         'Auth' => array(
             'loginRedirect' => array('controller' => 'users', 'action' => 'index'),
             'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
-			'authError' => 'You must be logged in to view this page.',
-			'loginError' => 'Invalid Username or Password entered, please try again.'
+			'authError' => 'You cannot access that page',
+			'loginError' => 'Invalid Username or Password entered, please try again.',
+			'authorize'=>array('Controller')
  
         ));
+	public function isAuthorized($user) {
+		// Here is where we should verify the role and give access based on role
+		return true;
+	}
 	
 	// only allow the login controllers only
 	public function beforeFilter() {
         $this->Auth->allow('display');
+		$this->set('current_user', $this->Auth->user());
     }
 	
-	public function isAuthorized($user) {
-		// Here is where we should verify the role and give access based on role
-		
-		return true;
-	}
 	
 }

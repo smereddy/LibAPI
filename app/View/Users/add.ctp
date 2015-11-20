@@ -9,7 +9,7 @@
         echo $this->Form->input('password');
 		echo $this->Form->input('password_confirm', array('label' => 'Confirm Password *', 'maxLength' => 255, 'title' => 'Confirm password', 'type'=>'password'));
         echo $this->Form->input('role', array(
-            'options' => array( 'king' => 'King', 'queen' => 'Queen', 'rook' => 'Rook', 'bishop' => 'Bishop', 'knight' => 'Knight', 'pawn' => 'Pawn')
+            'options' => array( 'regular' => 'regular', 'admin' => 'admin')
         ));
 		
 		echo $this->Form->submit('Add User', array('class' => 'form-submit',  'title' => 'Click here to add the user') ); 
