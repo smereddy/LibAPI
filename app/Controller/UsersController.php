@@ -24,7 +24,14 @@ class UsersController extends AppController {
 		return true;
 	}
 
-
+var $helpers = array('Html', 'Form','Csv'); 
+function export()
+{
+    $this->set('users', $this->user->find('all'));
+    $this->layout = null;
+    $this->autoLayout = false;
+    Configure::write('debug','0');
+}
 	public function login() {
 		
 		//if already logged-in, redirect

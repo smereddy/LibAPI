@@ -15,7 +15,14 @@ class ItemsController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Session');
-	
+	var $helpers = array('Html', 'Form','Csv'); 
+	function export()
+{
+    $this->set('posts', $this->Post->find('all'));
+    $this->layout = null;
+    $this->autoLayout = false;
+    Configure::write('debug','0');
+}
 	public function logout() {
 		$this->redirect($this->Auth->logout());
 	}
@@ -25,6 +32,7 @@ class ItemsController extends AppController {
  *
  * @return void
  */
+	
 	public function index() {
 		$this->Item->recursive = 0;
 		$this->set('items', $this->Paginator->paginate());

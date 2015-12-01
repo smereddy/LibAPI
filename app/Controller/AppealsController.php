@@ -15,7 +15,14 @@ class AppealsController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Session');
-
+var $helpers = array('Html', 'Form','Csv'); 
+function export()
+{
+    $this->set('posts', $this->Post->find('all'));
+    $this->layout = null;
+    $this->autoLayout = false;
+    Configure::write('debug','0');
+}
 /**
  * index method
  *

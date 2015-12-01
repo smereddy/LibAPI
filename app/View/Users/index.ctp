@@ -192,6 +192,7 @@ If you are a new applicant who resides in Douglas County, Nebraska, once you hav
 <?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
 </div>				
 <?php echo $this->Html->link( "Add A New User.",   array('action'=>'add'),array('escape' => false) ); ?>
+<?php echo $this->Html->link('Export',array('controller'=>'users','action'=>'export'), array('target'=>'_blank'));?>
 <br/>
 </div>
 </div>

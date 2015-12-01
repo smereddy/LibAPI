@@ -32,6 +32,7 @@
 	Router::connect('/dashboard', array('controller' => 'users', 'action' => 'index'));
 Router::connect('/login', array('controller' => 'users', 'action' => 'login'));
 Router::connect('/logout', array('controller' => 'users', 'action' => 'logout'));
+Router::parseExtensions('csv');
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on
