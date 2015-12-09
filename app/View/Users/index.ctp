@@ -52,6 +52,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 <li><a href="items">Items</a></li>
 					 <li><a href="libraries">Libraries</a></li>
 					 <li><a href="transactions">Transactions</a></li>
+					 <li><a href="report_manager/reports">Download Report</a></li>
 					 <li><?php 
 echo $this->Html->link( "Logout",   array('action'=>'logout') ); 
 ?></li>
@@ -187,12 +188,15 @@ If you are a new applicant who resides in Douglas County, Nebraska, once you hav
 		<?php unset($user); ?>
 	</tbody>
 </table>
+
+
+
 <?php echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
 <?php echo $this->Paginator->numbers(array(   'class' => 'numbers'     ));?>
 <?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
 </div>				
 <?php echo $this->Html->link( "Add A New User.",   array('action'=>'add'),array('escape' => false) ); ?>
-<?php echo $this->Html->link('Export',array('controller'=>'users','action'=>'export'), array('target'=>'_blank'));?>
+
 <br/>
 </div>
 </div>
